@@ -1,0 +1,251 @@
+@charset "utf-8";
+
+
+/* reset */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* global */
+
+.container-global {
+    position: relative;
+    width: 70%;
+    height: 80vh;
+    margin: 0 auto;
+    background-color: rgb(239,239,239);
+}
+
+
+/* container top */
+
+.container-top {
+    position: relative;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: rgb(239,96,97);
+}
+
+.container-top h3 {
+    padding: 10px 0 0 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-top .echap {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.container-top .separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(243, 243, 243, 0.4);
+    margin: 10px 0;
+}
+
+.container-top input[type="search"] {
+    width: 95%;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.container-top input[type="search"]::placeholder {
+    color: #b4b4b4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* container bottom */
+
+.container-bottom .container-bottom-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* item */
+
+.container-bottom .container-bottom-item .item {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+}
+
+.container-bottom .container-bottom-item .item div:first-child {
+    width: 70px;
+    height: 70px;
+    background-color: grey;
+}
+
+.container-bottom .container-bottom-item .item p {
+    margin-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+/* selected item */
+
+.container-bottom .container-bottom-selected-item {
+    width: 90%;
+    margin: 5px auto 10px auto;
+    background-color: #ffffff;
+    padding: 15px 0;
+}
+
+.container-bottom .container-bottom-selected-item .selected-item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 50px;
+}
+
+.container-bottom .container-bottom-selected-item .selected-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+/* category */
+
+.container-bottom .container-bottom-category .category {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 5px auto;
+    padding: 15px 60px;
+    background-color: #ffffff;
+}
+
+.container-bottom .container-bottom-category .category p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+/* selected category */
+
+.container-bottom .container-bottom-selected-category {
+    width: 90%;
+    margin: 5px auto 10px auto;
+    background-color: #ffffff;
+    padding: 15px 0;
+}
+
+.container-bottom .container-bottom-selected-category .selected-category {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.container-bottom .container-bottom-selected-category .selected-category p {
+    padding-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+/* skill */
+
+.container-bottom .container-bottom-skill .skill {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 5px auto;
+    padding: 15px 60px;
+    background-color: #ffffff;
+}
+
+.container-bottom .container-bottom-skill .skill div {
+    display: flex;
+    align-items: center;
+}
+
+.container-bottom .container-bottom-skill .skill div p {
+    padding-left: 5px
+}
+
+.container-bottom .container-bottom-skill .skill p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+/* select */
+
+.select {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    border-bottom: #4cba62 2px solid;
+}
+
+.select div {
+    display: flex;
+    align-items: center;
+}
+
+.select div img {
+    width: 18px;
+    height: 18px;
+    margin-right: 3px;
+}
+
+.select div p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    margin-left: 3px;
+}
