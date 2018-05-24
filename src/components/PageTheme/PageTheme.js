@@ -5,17 +5,6 @@ import './PageTheme.css';
 import Header from '../Header/Header'
 import Theme from '../Theme/Theme';
 
-const themes = [
-    {
-        name: 'Bricolage, Mécanique, Jardinage'
-    },
-    {
-        name: 'Plomberie'
-    },
-    {
-        name: 'Ménage'
-    }
-]
 
 class PageTheme extends Component {
     constructor(props) {
@@ -63,7 +52,7 @@ class PageTheme extends Component {
     }
 }
 
-const query = gql`
+const queryAllSkillThemesName = gql`
     {
         allSkillThemes {
             name 
@@ -71,4 +60,4 @@ const query = gql`
     }
 ` 
 
-export default graphql(query)(withApollo(PageTheme));
+export default graphql(queryAllSkillThemesName)(withApollo(PageTheme));

@@ -1,0 +1,15 @@
+.skill {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 5px auto;
+    padding: 15px 60px;
+    background-color: #ffffff;
+}
+
+.skill p {
+    padding-left: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}

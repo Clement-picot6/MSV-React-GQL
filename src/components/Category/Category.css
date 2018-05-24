@@ -1,0 +1,10 @@
+.itemCategory {
+    width: 33%;
+    padding: 15px;
+}
+
+.itemCategory p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+}
