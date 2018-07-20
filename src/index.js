@@ -19,9 +19,9 @@ const Root = () => {
         <ApolloProvider client={client}>
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" component={PageTheme} />
-                    <Route path="/allSkillCategories" component={ListCategory} />
-                    <Route path="/allSkills" component={ListSkill} />
+                    <Route exact path="/themes" component={PageTheme} />
+                    <Route path="/themes/:theme/categories" component={ListCategory} />
+                    <Route path="/categories/:category/skills" component={ListSkill} />
                 </Switch>
             </BrowserRouter>
         </ApolloProvider>

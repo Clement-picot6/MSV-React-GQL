@@ -20,7 +20,7 @@ class ListCategory extends Component {
             <div className="container-global">
                 <Header />
                 <div className="container-bottom">
-                    <div className="container-bottom-item">
+                    <div className="container-bottom-category">
                         {this.renderCategories()}
                     </div>
                 </div>
@@ -30,16 +30,22 @@ class ListCategory extends Component {
     }
 
     renderCategories() {
-        return this.props.data.allSkillCategories.map(category => (<Category category={category} key={category.name} />))
+        return this.props.data.allSkillThemes[0].SkillCategories.map(category => (<Category category={category} key={category.code} />))
     }
 }
 
 const queryAllSkillCategoriesName = gql`
-    {
-        allSkillCategories {
-            name 
+query CategoriesQuery($search: String!){
+    allSkillThemes(search: $search) {
+        name
+        SkillCategories {
+            name,
+            code
         }
     }
+}
 `
- 
-export default graphql(queryAllSkillCategoriesName)(withApollo(ListCategory)); 
+
+export default graphql(queryAllSkillCategoriesName, {
+    options: (props) => ({ variables: { search: props.match.params.theme }})
+})(withApollo(ListCategory)); 

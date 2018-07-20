@@ -15,14 +15,15 @@ class PageTheme extends Component {
     }
 
     renderThemes() {
-        return this.props.data.allSkillThemes.map(theme => (<Theme theme={theme} key={theme.name} />))
+        return this.props.data.allSkillThemes.map(theme => (<Theme theme={theme} key={theme.code} />))
     }
 
     searchThemes = (search) => {
         const query = gql`
         query SearchThemes($search: String) {
             allSkillThemes(search: $search) {
-                name 
+                name,
+                code
             }
         }
         ` 
@@ -43,7 +44,7 @@ class PageTheme extends Component {
         <div className="container-global">
             <Header handleSubmit={this.searchThemes} />
         <div className="container-bottom">
-            <div className="container-bottom-item">
+            <div className="container-bottom-theme">
                 {this.renderThemes()}
             </div>
         </div>
@@ -55,7 +56,8 @@ class PageTheme extends Component {
 const queryAllSkillThemesName = gql`
     {
         allSkillThemes {
-            name 
+            name,
+            code
         }
     }
 ` 

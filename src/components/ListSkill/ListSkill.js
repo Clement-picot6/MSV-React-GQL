@@ -10,7 +10,7 @@ class ListSkill extends Component {
     }
 
     renderSkills() {
-        return this.props.data.allSkills.map(skill => (<Skill skill={skill} key={skill.name} />))
+        return this.props.data.allSkillCategories[0].Skills.map(skill => (<Skill skill={skill} key={skill.code} />))
     }
 
     render() { 
@@ -35,11 +35,17 @@ class ListSkill extends Component {
 }
 
     const queryAllSkillsName = gql`
-    {
-        allSkills {
+    query SkillsQuery($search: String!){
+        allSkillCategories(search: $search) {
             name
+            Skills {
+                name,
+                code
+            }
         }
     }
     `
 
-export default graphql(queryAllSkillsName)(withApollo(ListSkill));
+export default graphql(queryAllSkillsName, {
+    options: (props) => ({ variables: { search: props.match.params.category }})
+})(withApollo(ListSkill));
