@@ -8,7 +8,7 @@ class ListSkill extends Component {
     constructor(props) {
         super(props);
     }
-
+    
     renderSkills() {
         return this.props.data.allSkillCategories[0].Skills.map(skill => (<Skill skill={skill} key={skill.code} />))
     }
@@ -40,7 +40,10 @@ class ListSkill extends Component {
             name
             Skills {
                 name,
-                code
+                code,
+                Icon {
+                    downloadUrl
+                }
             }
         }
     }
